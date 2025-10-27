@@ -40,7 +40,7 @@ graph.addEdge(START,"Sentiment")
 
 graph.addConditionalEdges("Sentiment",async(state) => {
 
-    console.log("con",state)
+    // console.log("con",state)
     if(state.sentiment === "positive") return "positive"
     else if(state.sentiment === "negative") return "negative"
     else{

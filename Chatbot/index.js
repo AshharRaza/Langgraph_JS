@@ -25,7 +25,7 @@ let messages
 const AskNode = new RunnableLambda({
  func : async(state) => {
 
-    // console.log("meads",messages)
+   
     // console.log(state)
     messages = await loadMessage() || []
     const data = state.message

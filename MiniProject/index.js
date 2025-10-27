@@ -15,7 +15,7 @@ const SummaryNode = new RunnableLambda({
     func: async(state)  => {
         const data = state.text
 
-        const aiReplay = await model.invoke(data)
+        const aiReplay = await model.invoke(`Write a short summary ${data}`)
 
         return {...state,summary:aiReplay.content}
     }
@@ -36,7 +36,7 @@ const SentimentNode = new RunnableLambda({
 const TranslationNode = new RunnableLambda({
     func: async(state) => {
         const translation = await model.invoke(`
-            Translate the summary : ${state.summary}
+            Translate the summary in hindi : ${state.summary}
             `)
         return {...state,translation:translation.content}
     }
